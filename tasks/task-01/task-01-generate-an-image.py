@@ -40,9 +40,8 @@ def main():
     # Generate the image
     image = generate_image(args.registration_number, args.width, args.height, args.mean, args.std)
 
-    clipped_image = np.clip(image, 0, 255).astype(np.uint8) # clip the image to be between 0 and 255 to avoid overflow
     # Save the generated image
-    cv2.imwrite(args.output, clipped_image)
+    cv2.imwrite(args.output, image)
 
     print(f"Image successfully generated and saved to {args.output}")
 
