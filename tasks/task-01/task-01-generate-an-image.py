@@ -19,6 +19,7 @@ def generate_image(seed, width, height, mean, std):
     ### START CODE HERE ###
     np.random.seed(seed)
     image = np.random.normal(mean, std, (height, width))
+    image = np.clip(image, 0, 255) 
     ### END CODE HERE ###
 
     return image
