@@ -18,7 +18,7 @@ def generate_image(seed, width, height, mean, std):
     """
     ### START CODE HERE ###
     np.random.seed(seed)
-    image = np.random.normal(mean, std, (height, width))
+    image = np.random.normal(mean, std, (height, width), dtype=np.uint8)
     image = np.clip(image, 0, 255) 
     ### END CODE HERE ###
 
@@ -44,10 +44,6 @@ def main():
     cv2.imwrite(args.output, image)
 
     print(f"Image successfully generated and saved to {args.output}")
-
-    # plot the histogram of the image
-    plt.hist(image.flatten(), bins=100, density=True, alpha=0.75)
-    plt.show()
 
 if __name__ == "__main__":
     main()
