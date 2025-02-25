@@ -24,4 +24,4 @@ def load_image_from_url(url, **kwargs):
     
     return image
 
-load_image_from_url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png", flags=cv.IMREAD_GRAYSCALE)
+load_image_from_url()
