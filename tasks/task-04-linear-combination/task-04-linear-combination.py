@@ -22,8 +22,7 @@ def linear_combination(i1: np.ndarray, i2: np.ndarray, a1: float, a2: float) -> 
     ### START CODE HERE ###
     output = a1 * i1 + a2 * i2
 
-    output = np.clip(output, 0, 255).astype(np.uint8)
-
+    output = np.clip(output, 0, 255).astype(np.ndarray)
     ### END CODE HERE ###
 
     return output
