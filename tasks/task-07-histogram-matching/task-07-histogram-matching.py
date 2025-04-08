@@ -24,7 +24,6 @@ Notes:
 - You can assume the input images are already loaded and in RGB format (not BGR).
 """
 
-import cv2 as cv
 import numpy as np
 
 """
