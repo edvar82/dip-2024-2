@@ -58,18 +58,3 @@ def match_histograms_rgb(source_img: np.ndarray, reference_img: np.ndarray) -> n
     matched_img = np.clip(matched_img, 0, 255)
     return matched_img.astype(np.uint8)
 
-def main():
-    source_img = cv.imread("source.jpg")
-    reference_img = cv.imread("reference.jpg")
-    if source_img is None or reference_img is None:
-        print("Erro ao carregar as imagens.")
-        return
-    source_img_rgb = cv.cvtColor(source_img, cv.COLOR_BGR2RGB)
-    reference_img_rgb = cv.cvtColor(reference_img, cv.COLOR_BGR2RGB)
-    matched_img_rgb = match_histograms_rgb(source_img_rgb, reference_img_rgb)
-    matched_img_bgr = cv.cvtColor(matched_img_rgb, cv.COLOR_RGB2BGR)
-    cv.imwrite("output_achieved.jpg", matched_img_bgr)
-    print("Imagem salva como 'output_achieved.jpg'.")
-
-if __name__ == "__main__":
-    main()
